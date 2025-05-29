@@ -1,5 +1,7 @@
 import { io } from "socket.io-client";
 import { getallmessages, sendmessage, setMessages, setOnlineUsers } from "./redux/messgaeslice";
+import { url } from "../url";
+
 
 let socket = null;
 
@@ -9,8 +11,8 @@ export const connectSocket = (userId) => {
     return;
   }
 
-  socket = io("http://localhost:4000", {
-    withCredentials: true,
+ socket = io(url, {
+   withCredentials: true,
     query: { userId },
   });
 
