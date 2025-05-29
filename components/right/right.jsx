@@ -21,7 +21,7 @@ function Right() {
 
 
   const onlineuser = useSelector((state)=>state.conversation.onlineusers);
-  const onlineuser2 = onlineuser.includes(selecteduser._id)
+  const onlineuser2 = onlineuser.includes(selecteduser?._id)
   console.log("userloneke",onlineuser2)
 
   const getInitials = (name) => {
