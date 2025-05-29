@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import User from "./User";
 import { getUnreadCounts } from "./redux/messgaeslice";
+import { url } from "../url";
 
 function Users() {
   const [users, setUsers] = useState([]);
@@ -12,7 +13,7 @@ function Users() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/userroute12/users", {
+        const res = await axios.get(`${url}/userroute12/users`, {
           withCredentials: true,
         });
 

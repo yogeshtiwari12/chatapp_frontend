@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import authReducer from './authslice'; // make sure this exists
-import conversationReducer from './messgaeslice'; // make sure this exists
+import authReducer from './authslice';
+import conversationReducer from './messgaeslice'; 
 import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
+import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
     key:'auth',

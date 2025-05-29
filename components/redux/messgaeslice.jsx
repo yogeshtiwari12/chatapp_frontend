@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { url } from "../../url";
 
 export const getallmessages = createAsyncThunk(
   "messages/getallmessages",
   async (id) => {
     const response = await axios.get(
-      `http://localhost:4000/messages/getmesages/${id}`,
+      `${url}/messages/getmesages/${id}`,
       {
         withCredentials: true,
       }
@@ -35,7 +36,7 @@ export const sendmessage = createAsyncThunk(
     }
     
     const response = await axios.post(
-      `http://localhost:4000/messages/sendmessage/${id}`,
+      `${url}/messages/sendmessage/${id}`,
       formData,
       {
         withCredentials: true,

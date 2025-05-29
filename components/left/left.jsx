@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import Users from "../Users";
+import { url } from "../../url";
 
 function Left() {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ function Left() {
 
   const handleLogout = async() => {
     try {
-      const res = await axios.post('http://localhost:4000/userroute12/logout', {},
+      const res = await axios.post(`${url}/userroute12/logout`, {},
         { withCredentials: true });
       
       if (res.status === 200) {

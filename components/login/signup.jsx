@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { url } from '../../url';
 
 function Signup() {
   const [name, setUsername] = useState('');
@@ -22,7 +23,7 @@ function Signup() {
  
 
       const response = await axios.put(
-        'http://localhost:4000/userroute12/signup',
+        `${url}/userroute12/signup`,
         {
           name,
           email,

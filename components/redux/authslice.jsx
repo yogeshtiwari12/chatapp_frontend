@@ -1,9 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { url } from "../../url";
 
 const getuser = createAsyncThunk("auth/getuser", async () => {
   const response = await axios.get(
-    `http://localhost:4000/userroute12/getauthuser`,
+    `${url}/userroute12/getauthuser`,
     {
       withCredentials: true,
     }
@@ -16,7 +17,7 @@ const getuser = createAsyncThunk("auth/getuser", async () => {
 });
 
 const getallusers = createAsyncThunk("auth/getalluser", async () => {
-  const response = await axios.get(`http://localhost:4000/userroute12/users`, {
+  const response = await axios.get(`${url}/userroute12/users`, {
     withCredentials: true,
   });
   if (response.status === 200) {
