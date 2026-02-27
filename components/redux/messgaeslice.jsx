@@ -57,7 +57,7 @@ export const markMessagesAsRead = createAsyncThunk(
   "messages/markAsRead",
   async (senderId) => {
     const response = await axios.put(
-      `http://localhost:4000/messages/markread/${senderId}`,
+      `${url}/messages/markread/${senderId}`,
       {},
       {
         withCredentials: true,
@@ -74,7 +74,7 @@ export const getUnreadCounts = createAsyncThunk(
   "messages/getUnreadCounts",
   async () => {
     const response = await axios.get(
-      `http://localhost:4000/messages/unreadcounts`,
+      `${url}/messages/unreadcounts`,
       {
         withCredentials: true,
       }

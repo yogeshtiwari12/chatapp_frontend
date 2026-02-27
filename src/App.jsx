@@ -33,7 +33,7 @@ function App() {
       <Routes>
         <Route path="/" element={ <Home /> } />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={isauth?<Signup />:<Navigate to="/login"/>} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </Router>
   );

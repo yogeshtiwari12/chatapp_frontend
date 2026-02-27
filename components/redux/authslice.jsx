@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { url } from "../../url";
 
+
 const getuser = createAsyncThunk("auth/getuser", async () => {
   const response = await axios.get(
     `${url}/userroute12/getauthuser`,
@@ -16,6 +17,7 @@ const getuser = createAsyncThunk("auth/getuser", async () => {
   throw new Error("Failed to fetch user data");
 });
 
+
 const getallusers = createAsyncThunk("auth/getalluser", async () => {
   const response = await axios.get(`${url}/userroute12/users`, {
     withCredentials: true,
@@ -29,6 +31,7 @@ const getallusers = createAsyncThunk("auth/getalluser", async () => {
 
 const authSlice = createSlice({
   name: "auth",
+
   initialState: {
     user: null,
     allusers: [],
@@ -38,6 +41,7 @@ const authSlice = createSlice({
     error: null,
     isprofile: false,
   },
+
   reducers: {
     setAllUsers: (state, action) => {
       state.allusers = action.payload;
@@ -47,7 +51,10 @@ const authSlice = createSlice({
       state.selecteduser = action.payload;
     },
   },
+
+
   extraReducers: (builder) => {
+    
     builder
       .addCase(getuser.pending, (state) => {
         state.loading = true;
