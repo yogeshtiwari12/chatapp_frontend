@@ -1,1 +1,1 @@
-export const url = "http://localhost:4000";
+export const url = "https://chatapp-backend-7xo9.onrender.com";
